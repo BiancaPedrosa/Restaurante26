@@ -1,0 +1,145 @@
+img{
+   width: 800px;
+   margin-left:0 auto;
+   margin-right:0 auto;
+}
+body{
+   text-align: center;
+   font-family: Arial, sans-serif;
+   background-color: #f4f4f4;
+   margin: 0;
+   padding: 20px;
+ }
+
+ /* estilo do nav */
+nav ul li{
+   display: inline-block;
+   align-items: center; 
+   margin: 10px
+}
+nav  {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: gray
+}
+a {
+   display: inline-block;
+   margin-top: 20px;
+   text-decoration: none;
+   color: #007bff;
+ }
+a:active{ color: orange;}
+a:visited { color: lightsteelblue;}
+a:link{ color: lightsteelblue;}
+a:hover{ color: orange;}
+
+ h1 {
+   color: #333;
+ }
+ 
+/*estilo do formulário */
+ form {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   width: 50%;
+   margin: auto;
+ }
+ label {
+   display: block;
+   margin-bottom: 5px; 
+   text-align: left;
+ }
+ input[type="text"],
+ input[type="email"],
+ textarea {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+ }
+ input[type="submit"] {
+   background-color: #28a745;
+   color: white;
+   padding: 10px 15px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+ input[type="submit"]:hover {
+   background-color: #218838;
+ }
+ 
+ /* Container que segura os dois campos */
+.form-row {
+    display: flex;       /* Ativa o modo de alinhamento lado a lado */
+    gap: 20px;          /* Cria um espaço entre a data e a hora */
+    margin-bottom: 15px; /* Espaço para o próximo campo */
+    width:100%;
+}
+
+/* Garante que cada campo ocupe o mesmo espaço ou se ajuste */
+.form-group {
+    display: flex;
+    flex-direction: column; /* Mantém o label ACIMA do input */
+    flex: 1;
+}
+
+/* Ajuste opcional para os inputs ficarem bonitos */
+input[type="date"],
+input[type="time"] {
+    width: 100%;             /* FORÇA o input a preencher todo o espaço da div .campo */
+    box-sizing: border-box; /* Garante que padding/borda não quebrem o layout */
+    
+    /* Outros estilos para ficarem parecidos com Nome/Email */
+    padding: 10px;           /* Dá um "respiro" dentro do campo */
+    border: 1px solid #ccc;  /* Borda padrão */
+    border-radius: 4px;      /* Cantos arredondados */
+    font-size: 16px;         /* Texto legível */
+    min-height: 40px;        /* Altura mínima garantida */
+    min-width: 150px;
+}
+/* Estilo base da tabela */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse; /* Garante que as bordas não fiquem duplas */
+    font-family: sans-serif;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+/*  Efeito Zebrado (Striped) */
+/* Aplica cor de fundo apenas nas linhas ímpares (odd) */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Efeito de destaque ao passar o mouse */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+    transition: background-color 0.2s;
+}
+/* mobile */
+@media (max-width: 480px) {
+    .double-group {
+        flex-direction: column; /* Volta a empilhar no celular */
+    }
+}

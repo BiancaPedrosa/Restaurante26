@@ -1,0 +1,22 @@
+[
+    {
+      "nome": "Pizza de Calabresa",
+      "preco": 30.00
+    },
+    {
+      "nome": "Pizza de Frango",
+      "preco": 28.00
+    },
+    {
+      "nome": "Hamburguer Artesanal",
+      "preco": 25.00
+    },
+    {
+      "nome": "Refrigerante Lata",
+      "preco": 6.00
+    },
+    {
+      "nome": "Suco Natural",
+      "preco": 8.00
+    }
+  ]
