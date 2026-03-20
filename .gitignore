@@ -6,7 +6,7 @@ node_modules/
 npm-debug.log*
 
 # Arquivos do mac
-.*
+.DS_Store
 
 # Arquivo .gitignore
-.gitignore
+.gitignore.DS_Store
