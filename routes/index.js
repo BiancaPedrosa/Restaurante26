@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const cardapio = require('../cardapio.js'); // Voltou uma pasta para achar o cardapio.js
+const cardapio = require('../cardapio.js');
 
 // Página Principal
 router.get('/', (req, res) => {
@@ -20,7 +20,7 @@ router.get('/cardapio', (req, res) => {
         <html>
         <head>
             <meta charset="UTF-8">
-            <link rel="stylesheet" href="css/estilo.css"> 
+            <link rel="stylesheet" href="/css/estilo.css"> 
             <title>Cardápio Dinâmico</title>
         </head>
         <body>
@@ -42,17 +42,30 @@ router.get('/faleconosco', (req, res) => {
 });
 
 router.post('/faleconosco',(req, res) => {
-  res.write("Mensagem recebida: " + req.body.nome + " - " + req.body.email + " - " + req.body.mensagem); 
-  res.end();
+  const { nome, email, mensagem } = req.body;
+  // Envia um script HTML para o navegador exibir um alerta e redirecionar
+  res.send(`
+    <script>
+      alert("Obrigado, ${nome}! Sua mensagem foi recebida com sucesso.");
+      window.location.href = '/faleconosco'; // Redireciona de volta
+    </script>
+  `);
 });
 
 // Reservas
 router.get('/reservas', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/reserva.html'));
 });
+
 router.post('/reservas', (req, res) => {
    const { nome, email, data } = req.body;
-   res.send(`dados recebidos: ${nome} ${email} ${data}`);
+   // Envia um script HTML para o navegador exibir um alerta e redirecionar
+   res.send(`
+    <script>
+      alert("Reserva confirmada!\\n\\nNome: ${nome}\\nData: ${data}");
+      window.location.href = '/reservas'; // Redireciona de volta
+    </script>
+   `);
 });
 
 module.exports = router; // Exporta o roteador para ser usado no app.js
