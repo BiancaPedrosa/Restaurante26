@@ -5,7 +5,7 @@ const rotas = require('./routes/index.js'); // Importe o arquivo de rotas
 
 //  Criação da aplicação Express
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Usa a porta da nuvem ou a 3000 localmente
 
 // Configurar o diretório para arquivos estáticos (CSS, JS, imagens)
 app.use(express.static(path.join(__dirname, 'public')));
