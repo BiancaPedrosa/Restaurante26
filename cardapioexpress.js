@@ -1,18 +1,7 @@
-// modulo para ler o cardápio do restaurante
+// modulo para ler o cardápio do restaurante usando require() (estilo Express)
 
-const fs = require('fs');// Importa o módulo 'fs' para manipulação de arquivos
-const path = require('path');// Importa o módulo 'path' para manipulação de caminhos de arquivos
-
-// Função para ler o conteúdo de um arquivo
-const getProdutos = (filename) => {
-    try {
-        const data = fs.readFileSync(filename, 'utf8');
-        return JSON.parse(data);
-    } catch (err) {
-        console.error(`Erro ao ler o arquivo ${filename}:`, err);
-        return null; // Retorna null em caso de erro
-    }
-}
+// Lê o JSON do cardápio direto com require() — igual ao require() do Express
+const cardapio = require('./data/cardapio.json');
 
 // Exibe o cardápio formatado
 const showProdutos = (cardapio) => {
@@ -34,6 +23,6 @@ const showProdutos = (cardapio) => {
 }
 
 module.exports = {
-  getProdutos : getProdutos,
+  cardapio: cardapio,
   showProdutos: showProdutos
 }

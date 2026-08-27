@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const cardapio = require('../cardapio.js');
+const cardapio = require('../cardapioexpress.js');
 
 // Página Principal
 router.get('/', (req, res) => {
@@ -10,9 +10,8 @@ router.get('/', (req, res) => {
 
 // Cardápio
 router.get('/cardapio', (req, res) => {
-    // Executa a lógica do seu módulo
-    const dados = cardapio.getProdutos(path.join(__dirname, '../data/cardapio.json'));
-    const tabela = cardapio.showProdutos(dados);
+    // Executa a lógica do seu módulo (cardápio já lido via require())
+    const tabela = cardapio.showProdutos(cardapio.cardapio);
 
     // Cria o HTML "na mão" usando crases (Template Literals)
     const htmlFinal = `
